@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<!-- Grandville Homepage v1.1\nChanges: Fixed panel integration, Bio background #EBEDF5, Added full-width Google Map panel. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grandville Foot and Ankle | Expert Podiatry Care in West Michigan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary-blue": "#3E5CA8",
+          "secondary-blue": "#6D86BF",
+          "accent-green": "#7F9F61",
+          seafoam: "#CBD9D0",
+          "soft-linen": "#F7F5F0",
+          "deep-slate": "#30363D",
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', "serif"],
+          sans: ["Montserrat", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+  .font-serif {
+    font-family: "Cormorant Garamond", serif;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+  /* Visible keyboard focus ring on every interactive element */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid #7f9f61;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* ===== PRACTICE AREAS PANEL ===== */
+  .pa-card{position:relative;height:510px;overflow:hidden;cursor:pointer}
+  .pa-def{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;z-index:10;transition:opacity .36s ease,transform .36s ease}
+  .pa-card:hover .pa-def{opacity:0;transform:translateY(-10px);pointer-events:none}
+  .pa-hov{position:absolute;inset:0;display:flex;flex-direction:column;padding:2rem;z-index:10;opacity:0;transform:translateY(12px);transition:opacity .36s ease .1s,transform .36s ease .1s;pointer-events:none}
+  .pa-card:hover .pa-hov{opacity:1;transform:translateY(0);pointer-events:auto}
+  .pa-ttl{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1;font-style:italic}
+  .pa-sub{display:block;color:#7F9F61;font-size:.6rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;margin-top:.55rem}
+  .pa-sep{height:1px;margin:1rem 0;border:none}
+  .pa-cols{display:grid;grid-template-columns:1fr 1fr;gap:.6rem .85rem;align-content:start}
+  .cond-lk,.svc-lk{font-size:.67rem;font-weight:500;text-decoration:none;line-height:1.45;display:block;transition:color .18s ease}
+  .cond-lk{color:#2a3f68}.cond-lk:hover{color:#7F9F61}
+  .svc-lk{color:#30363D}.svc-lk:hover{color:#7F9F61}
+  .pa-ft{margin-top:.8rem;padding-top:.8rem}
+  .cond-ftl,.svc-ftl{font-size:.6rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;text-decoration:none;transition:color .18s ease}
+  .cond-ftl{color:#3E5CA8}.cond-ftl:hover{color:#7F9F61}
+  .svc-ftl{color:#30363D}.svc-ftl:hover{color:#7F9F61}
+
+/* ==============================
+   RESOURCES PANEL
+============================== */
+.resources-card{transition:transform .25s ease,box-shadow .25s ease;}
+.resources-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.08);}
+</style>
+</head>
+
+<body class="bg-soft-linen text-deep-slate antialiased">
+<a
+  href="#main-content"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-primary-blue focus:text-white focus:px-4 focus:py-2 focus:rounded"
+>
+  Skip to main content
+</a>
+
+<!-- ============================== HEADER ============================== -->
+<header class="fixed inset-x-0 top-0 z-50 bg-soft-linen transition-shadow duration-300">
+  <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6" aria-label="Primary">
+    <div class="flex items-start justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center shrink-0 py-1">
+        <img
+          src="[LOGO]"
+          alt="Grandville Foot and Ankle"
+          class="h-14 sm:h-16 w-auto"
+        />
+      </a>
+
+      <!-- Right-side stack: utility row (phone + CTA) above the primary nav row -->
+      <div class="hidden xl:flex flex-col items-end gap-4">
+        <!-- Top row -->
+        <div class="flex items-center gap-5">
+          <a
+            href="tel:6165343920"
+            class="flex items-center gap-2 text-sm font-medium text-[#2a3f68] hover:text-accent-green transition-colors"
+          >
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3 11 11 0 0 0 3.4.5 1.2 1.2 0 0 1 1.2 1.2V20a1.2 1.2 0 0 1-1.2 1.2A17.4 17.4 0 0 1 2.8 4.4 1.2 1.2 0 0 1 4 3.2h3.4a1.2 1.2 0 0 1 1.2 1.2 11 11 0 0 0 .5 3.4 1.2 1.2 0 0 1-.3 1.2L6.6 10.8Z" stroke-linejoin="round" />
+            </svg>
+            616-534-3920
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold uppercase tracking-wide px-5 py-2.5 rounded-md shadow-md transition-colors"
+          >
+            Appointments
+          </a>
+        </div>
+
+        <!-- Bottom row: primary nav links -->
+        <div class="flex items-center space-x-8 text-sm font-medium uppercase tracking-wide text-[#2a3f68] whitespace-nowrap pb-5">
+          <a href="#" class="hover:text-accent-green transition-colors">Home</a>
+
+          <!-- Conditions mega menu -->
+          <div>
+            <button
+              type="button"
+              data-dropdown-trigger
+              data-target="conditions-panel"
+              class="flex items-center gap-1.5 hover:text-accent-green transition-colors"
+              aria-expanded="false"
+              aria-controls="conditions-panel"
+            >
+              CONDITIONS
+              <svg class="w-3 h-3 transition-transform" data-chevron viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2.5 4.5 6 8l3.5-3.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div
+              id="conditions-panel"
+              data-dropdown-panel
+              class="fixed inset-x-0 z-40 w-full bg-soft-linen shadow-[0_12px_32px_-4px_rgba(0,0,0,0.10)] invisible opacity-0 -translate-y-3 pointer-events-none transition-all duration-300 ease-out normal-case whitespace-normal"
+            >
+              <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-seafoam">
+                  <div class="px-0 lg:px-6 lg:first:pl-0 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Bunions</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Corns / Calluses</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Hammertoes</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Heel Pain</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Plantar Fasciitis</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Achilles Tendonitis</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Neuromas</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Ankle Arthritis</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Ankle Sprains</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Ankle Fractures</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Athlete&rsquo;s Foot</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Ingrown Toenails</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Plantar Warts</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Toenail Fungus</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 lg:last:pr-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Diabetic Ulcers</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Neuropathy of the Foot</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-seafoam flex items-center justify-end">
+                  <a href="#" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">
+                    View All Conditions &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services mega menu -->
+          <div>
+            <button
+              type="button"
+              data-dropdown-trigger
+              data-target="services-panel"
+              class="flex items-center gap-1.5 hover:text-accent-green transition-colors"
+              aria-expanded="false"
+              aria-controls="services-panel"
+            >
+              SERVICES
+              <svg class="w-3 h-3 transition-transform" data-chevron viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2.5 4.5 6 8l3.5-3.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div
+              id="services-panel"
+              data-dropdown-panel
+              class="fixed inset-x-0 z-40 w-full bg-soft-linen shadow-[0_12px_32px_-4px_rgba(0,0,0,0.10)] invisible opacity-0 -translate-y-3 pointer-events-none transition-all duration-300 ease-out normal-case whitespace-normal"
+            >
+              <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-seafoam">
+                  <div class="px-0 lg:px-6 lg:first:pl-0 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Advanced Bunion Surgery</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Lapiplasty</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Minimally Invasive Bunion Surgery</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Non-Surgical Bunion Treatment</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Custom Orthotics</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Shockwave Therapy</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Laser Treatments</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">KeryFlex Nail Restoration</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 pb-6 lg:pb-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Onyfix Nail Correction</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Sports Medicine</a></li>
+                    </ul>
+                  </div>
+                  <div class="px-0 lg:px-6 lg:last:pr-0">
+                    <ul class="space-y-5">
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Pediatric Foot Care</a></li>
+                      <li><a href="#" class="block text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">Diabetic Foot Care</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-seafoam flex items-center justify-end">
+                  <a href="#" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2a3f68] hover:text-accent-green transition-colors">
+                    View All Services &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-accent-green transition-colors">Patient Resources</a>
+          <a href="#" class="hover:text-accent-green transition-colors">About</a>
+          <a href="#" class="hover:text-accent-green transition-colors">New Patients</a>
+          <a href="#" class="hover:text-accent-green transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button
+        type="button"
+        id="mobile-menu-button"
+        class="xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-md border border-[#2a3f68]/30 text-[#2a3f68]"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <svg id="icon-open" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" stroke-linecap="round" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M5.5 5.5l13 13M18.5 5.5l-13 13" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu panel: solid surface since the header itself is transparent -->
+  <div id="mobile-menu" class="hidden xl:hidden absolute inset-x-0 top-full bg-white shadow-xl">
+    <div class="px-4 sm:px-6 py-5 space-y-1 text-deep-slate">
+      <a href="#" class="block py-3 font-medium uppercase text-sm tracking-wide border-b border-seafoam/70">Home</a>
+
+      <div class="border-b border-seafoam/70">
+        <button
+          type="button"
+          data-mobile-accordion-trigger
+          data-target="mobile-conditions"
+          class="w-full flex items-center justify-between py-3 font-medium uppercase text-sm tracking-wide"
+          aria-expanded="false"
+          aria-controls="mobile-conditions"
+        >
+          Conditions
+          <svg class="w-3.5 h-3.5 transition-transform" data-chevron viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2.5 4.5 6 8l3.5-3.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div id="mobile-conditions" class="hidden grid grid-cols-2 gap-x-6 gap-y-2 pb-4 text-sm font-normal text-deep-slate/80">
+          <a href="#" class="hover:text-primary-blue">Bunions</a>
+          <a href="#" class="hover:text-primary-blue">Ankle Sprains</a>
+          <a href="#" class="hover:text-primary-blue">Corns / Calluses</a>
+          <a href="#" class="hover:text-primary-blue">Ankle Fractures</a>
+          <a href="#" class="hover:text-primary-blue">Hammertoes</a>
+          <a href="#" class="hover:text-primary-blue">Athlete&rsquo;s Foot</a>
+          <a href="#" class="hover:text-primary-blue">Heel Pain</a>
+          <a href="#" class="hover:text-primary-blue">Ingrown Toenails</a>
+          <a href="#" class="hover:text-primary-blue">Plantar Fasciitis</a>
+          <a href="#" class="hover:text-primary-blue">Plantar Warts</a>
+          <a href="#" class="hover:text-primary-blue">Achilles Tendonitis</a>
+          <a href="#" class="hover:text-primary-blue">Toenail Fungus</a>
+          <a href="#" class="hover:text-primary-blue">Neuromas</a>
+          <a href="#" class="hover:text-primary-blue">Diabetic Ulcers</a>
+          <a href="#" class="hover:text-primary-blue">Ankle Arthritis</a>
+          <a href="#" class="hover:text-primary-blue">Neuropathy of the Foot</a>
+          <a href="#" class="col-span-2 font-semibold text-primary-blue mt-1">View All Conditions &rarr;</a>
+        </div>
+      </div>
+
+      <div class="border-b border-seafoam/70">
+        <button
+          type="button"
+          data-mobile-accordion-trigger
+          data-target="mobile-services"
+          class="w-full flex items-center justify-between py-3 font-medium uppercase text-sm tracking-wide"
+          aria-expanded="false"
+          aria-controls="mobile-services"
+        >
+          Services
+          <svg class="w-3.5 h-3.5 transition-transform" data-chevron viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2.5 4.5 6 8l3.5-3.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div id="mobile-services" class="hidden grid grid-cols-2 gap-x-6 gap-y-2 pb-4 text-sm font-normal text-deep-slate/80">
+          <a href="#" class="hover:text-primary-blue">Advanced Bunion Surgery</a>
+          <a href="#" class="hover:text-primary-blue">Laser Treatments</a>
+          <a href="#" class="hover:text-primary-blue">Lapiplasty</a>
+          <a href="#" class="hover:text-primary-blue">KeryFlex Nail Restoration</a>
+          <a href="#" class="hover:text-primary-blue">Min. Invasive Bunion Surgery</a>
+          <a href="#" class="hover:text-primary-blue">Onyfix Nail Correction</a>
+          <a href="#" class="hover:text-primary-blue">Non-Surgical Bunion Treatment</a>
+          <a href="#" class="hover:text-primary-blue">Sports Medicine</a>
+          <a href="#" class="hover:text-primary-blue">Custom Orthotics</a>
+          <a href="#" class="hover:text-primary-blue">Pediatric Foot Care</a>
+          <a href="#" class="hover:text-primary-blue">Shockwave Therapy</a>
+          <a href="#" class="hover:text-primary-blue">Diabetic Foot Care</a>
+          <a href="#" class="col-span-2 font-semibold text-primary-blue mt-1">View All Services &rarr;</a>
+        </div>
+      </div>
+
+      <a href="#" class="block py-3 font-medium uppercase text-sm tracking-wide border-b border-seafoam/70">Patient Resources</a>
+      <a href="#" class="block py-3 font-medium uppercase text-sm tracking-wide border-b border-seafoam/70">About</a>
+      <a href="#" class="block py-3 font-medium uppercase text-sm tracking-wide border-b border-seafoam/70">New Patients</a>
+      <a href="#" class="block py-3 font-medium uppercase text-sm tracking-wide border-b border-seafoam/70">Contact</a>
+
+      <a
+        href="tel:6165343920"
+        class="flex items-center gap-2 py-3 text-sm font-medium text-deep-slate/80"
+      >
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3 11 11 0 0 0 3.4.5 1.2 1.2 0 0 1 1.2 1.2V20a1.2 1.2 0 0 1-1.2 1.2A17.4 17.4 0 0 1 2.8 4.4 1.2 1.2 0 0 1 4 3.2h3.4a1.2 1.2 0 0 1 1.2 1.2 11 11 0 0 0 .5 3.4 1.2 1.2 0 0 1-.3 1.2L6.6 10.8Z" stroke-linejoin="round" />
+        </svg>
+        616-534-3920
+      </a>
+
+      <a
+        href="#"
+        class="block text-center mt-2 bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold uppercase tracking-wide px-5 py-3 rounded-md shadow-md transition-colors"
+      >
+        Book an Appointment
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<main id="main-content">
+  <section class="relative overflow-hidden bg-soft-linen">
+    <!-- Spacer pushes image below the fixed nav: mobile logo-only nav ~88px, xl two-row nav ~120px -->
+    <div class="h-[88px] xl:h-[120px]"></div>
+
+    <!-- MOBILE: tagline centered above image (hidden on lg+) -->
+    <div class="lg:hidden text-center px-4 sm:px-6 pt-8">
+      <h1 class="font-serif font-semibold text-deep-slate text-4xl sm:text-5xl leading-[1.05]">
+        From First Steps<br />
+        to <span class="italic text-primary-blue">Finish Lines.</span>
+      </h1>
+    </div>
+
+    <!-- Image at full natural width — no object-cover, nothing gets cropped -->
+    <img
+      src="[HERO_IMAGE]"
+      alt="From a child's first steps to a family walk, an active senior, and a runner at the finish line"
+      class="w-full h-auto block mt-8 lg:mt-0"
+      aria-hidden="true"
+    />
+
+    <!-- MOBILE: CTA centered below image (hidden on lg+) -->
+    <div class="lg:hidden text-center px-4 sm:px-6 py-8">
+      <a
+        href="#"
+        class="inline-flex items-center bg-primary-blue hover:bg-secondary-blue text-white font-semibold uppercase tracking-wide text-sm px-7 py-3.5 rounded-md shadow-md transition-colors"
+      >
+        Book Your Appointment Today
+      </a>
+    </div>
+
+    <!-- DESKTOP: text overlay over image on the left (hidden below lg) -->
+    <div class="hidden lg:flex absolute inset-0 items-center pt-[88px] xl:pt-[120px]">
+      <div class="max-w-7xl w-full mx-auto px-8">
+        <div class="max-w-md">
+          <h1 class="font-serif font-semibold text-deep-slate text-6xl leading-[1.05] mb-8">
+            From First Steps<br />
+            to <span class="italic text-primary-blue">Finish Lines.</span>
+          </h1>
+          <a
+            href="#"
+            class="inline-flex items-center bg-primary-blue hover:bg-secondary-blue text-white font-semibold uppercase tracking-wide text-sm px-7 py-3.5 rounded-md shadow-md transition-colors"
+          >
+            Book Your Appointment Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CALLOUTS ============================== -->
+  <section class="bg-soft-linen">
+    <div class="max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <dl class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-deep-slate/15">
+
+        <!-- Callout 1: Clock -->
+        <div class="flex flex-col items-center text-center px-4 sm:px-10 py-8 sm:py-0">
+          <dt class="mb-5">
+            <div class="w-20 h-20 rounded-full bg-primary-blue/10 flex items-center justify-center">
+              <img src="[CALLOUT_ICON_CLOCK]" alt="Clock icon" class="w-14 h-14 object-contain" />
+            </div>
+          </dt>
+          <div class="w-8 h-0.5 bg-accent-green mb-5"></div>
+          <dd class="text-base text-deep-slate/70 leading-relaxed">Same-day appointments for urgent foot and ankle problems</dd>
+        </div>
+
+        <!-- Callout 2: Foot -->
+        <div class="flex flex-col items-center text-center px-4 sm:px-10 py-8 sm:py-0">
+          <dt class="mb-5">
+            <div class="w-20 h-20 rounded-full bg-seafoam/50 flex items-center justify-center">
+              <img src="[CALLOUT_ICON_FOOT]" alt="Foot icon" class="w-14 h-14 object-contain" />
+            </div>
+          </dt>
+          <div class="w-8 h-0.5 bg-accent-green mb-5"></div>
+          <dd class="text-base text-deep-slate/70 leading-relaxed">Real solutions for stubborn foot pain that hasn't responded elsewhere</dd>
+        </div>
+
+        <!-- Callout 3: Runner -->
+        <div class="flex flex-col items-center text-center px-4 sm:px-10 py-8 sm:py-0">
+          <dt class="mb-5">
+            <div class="w-20 h-20 rounded-full bg-primary-blue/10 flex items-center justify-center">
+              <img src="[CALLOUT_ICON_RUNNER]" alt="Runner icon" class="w-14 h-14 object-contain" />
+            </div>
+          </dt>
+          <div class="w-8 h-0.5 bg-accent-green mb-5"></div>
+          <dd class="text-base text-deep-slate/70 leading-relaxed">Treatments tailored for kids, athletes, and active adults</dd>
+        </div>
+
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DON'T RISK PANEL
+       ============================================================ -->
+  <section class="py-12 px-4 sm:py-16 sm:px-6 md:py-20 bg-soft-linen">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_6px_28px_rgba(42,63,104,0.10)]">
+
+        <!-- Left: Content -->
+        <div class="px-6 py-10 sm:px-10 sm:py-12 md:px-[3.25rem] md:py-[3.5rem] flex flex-col justify-center" style="background-color:#EAEDF4;">
+          <h2 class="font-serif italic font-semibold text-primary-blue text-6xl sm:text-7xl leading-none mb-4">
+            Don't Risk...
+          </h2>
+          <div class="w-12 h-0.5 bg-accent-green mb-8"></div>
+          <ul class="flex flex-col gap-[1.35rem] mb-6 md:mb-10">
+            <li class="flex items-start gap-[0.9rem]">
+              <span class="flex-shrink-0 w-2 h-2 rounded-full bg-accent-green mt-[7px]"></span>
+              <span class="text-[0.95rem] text-deep-slate leading-relaxed">Sitting on the sidelines while life keeps moving</span>
+            </li>
+            <li class="flex items-start gap-[0.9rem]">
+              <span class="flex-shrink-0 w-2 h-2 rounded-full bg-accent-green mt-[7px]"></span>
+              <span class="text-[0.95rem] text-deep-slate leading-relaxed">Going through the motions with care that never gets to the root of the problem</span>
+            </li>
+            <li class="flex items-start gap-[0.9rem]">
+              <span class="flex-shrink-0 w-2 h-2 rounded-full bg-accent-green mt-[7px]"></span>
+              <span class="text-[0.95rem] text-deep-slate leading-relaxed">Weeks of pain waiting for the next available appointment</span>
+            </li>
+          </ul>
+          <a href="#" class="block text-center bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold uppercase tracking-wide px-5 py-2.5 rounded-md shadow-md transition-colors">
+            Book Your Appointment Today
+          </a>
+        </div>
+
+        <!-- Right: Photo (replace src with real image) -->
+        <div class="relative min-h-[220px] sm:min-h-[320px] md:min-h-[460px] overflow-hidden">
+          <img
+            src="[DONT_RISK_PHOTO]"
+            alt="Patient photo"
+            class="absolute inset-0 w-full h-full object-cover object-center">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== VALUE PANEL ============================== -->
+  <section class="py-16 lg:py-28" style="background-color: #E0E6E0;">
+    <div class="max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Row 1: Mobility — Text left, Image right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-16 lg:mb-20">
+        <div class="lg:col-span-5">
+          <h2 class="font-serif italic font-semibold text-primary-blue text-6xl sm:text-7xl leading-none mb-3">Mobility</h2>
+          <div class="w-9 h-[3px] bg-accent-green mb-7"></div>
+          <p class="text-deep-slate text-base sm:text-lg leading-relaxed max-w-xs">Walk, run, and play without pain holding you back.</p>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="overflow-hidden aspect-[4/3] bg-seafoam/50" style="border-radius: 8px 48px 8px 48px;">
+            <img src="[VALUE_IMAGE_MOBILITY]" alt="Person walking and running comfortably" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Confidence — Image left, Text right -->
+      <!-- Mobile: text stacks above image via order utilities -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-16 lg:mb-20">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="overflow-hidden aspect-[4/3] bg-seafoam/50" style="border-radius: 48px 8px 48px 8px;">
+            <img src="[VALUE_IMAGE_CONFIDENCE]" alt="Person wearing sandals with confidence" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="lg:col-span-5 order-1 lg:order-2">
+          <h2 class="font-serif italic font-semibold text-primary-blue text-6xl sm:text-7xl leading-none mb-3">Confidence</h2>
+          <div class="w-9 h-[3px] bg-accent-green mb-7"></div>
+          <p class="text-deep-slate text-base sm:text-lg leading-relaxed max-w-xs">Show off feet you're actually proud to put forward in sandals.</p>
+        </div>
+      </div>
+
+      <!-- Row 3: Recovery — Text left, Image right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-12 lg:mb-16">
+        <div class="lg:col-span-5">
+          <h2 class="font-serif italic font-semibold text-primary-blue text-6xl sm:text-7xl leading-none mb-3">Recovery</h2>
+          <div class="w-9 h-[3px] bg-accent-green mb-7"></div>
+          <p class="text-deep-slate text-base sm:text-lg leading-relaxed max-w-xs">Get back to the activities you love faster than you thought possible.</p>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="overflow-hidden aspect-[4/3] bg-seafoam/50" style="border-radius: 8px 48px 8px 48px;">
+            <img src="[VALUE_IMAGE_RECOVERY]" alt="Dancer in ballet shoes" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex justify-center">
+        <a href="#" class="inline-flex items-center justify-center bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold uppercase tracking-wide px-5 py-2.5 rounded-md shadow-md transition-colors min-w-[280px]">
+          Book Your Appointment Today
+        </a>
+      </div>
+
+    </div>
+  </section>
+<!-- === PRACTICE AREAS === -->
+  <section class="bg-soft-linen py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div style="max-width:34rem;margin:0 auto 2.75rem;text-align:center;">
+        <span style="display:block;color:#7F9F61;font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;margin-bottom:.7rem;">Comprehensive Care</span>
+        <h2 class="font-serif" style="font-size:2.4rem;font-weight:500;color:#30363D;line-height:1.18;">Healthy Feet at Every Age<br>and Every Stage</h2>
+        <div style="width:3rem;height:2px;background:#7F9F61;margin:1.1rem auto 0;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div class="pa-card" style="background:#EBEDF5;border-radius:60px 20px 80px 40px;">
+          <div class="pa-def">
+            <h3 class="pa-ttl" style="font-size:3.4rem;color:#2a3f68;">Conditions</h3>
+            <span class="pa-sub">We Treat</span>
+          </div>
+          <div class="pa-hov">
+            <h3 class="pa-ttl" style="font-size:1.9rem;color:#2a3f68;">Conditions</h3>
+            <span class="pa-sub">We Treat</span>
+            <hr class="pa-sep" style="background:rgba(62,92,168,.22);">
+            <div class="pa-cols">
+              <a href="#" class="cond-lk">Bunions</a><a href="#" class="cond-lk">Ankle Sprains</a>
+              <a href="#" class="cond-lk">Corns / Calluses</a><a href="#" class="cond-lk">Ankle Fractures</a>
+              <a href="#" class="cond-lk">Hammertoes</a><a href="#" class="cond-lk">Athlete's Foot</a>
+              <a href="#" class="cond-lk">Heel Pain</a><a href="#" class="cond-lk">Ingrown Toenails</a>
+              <a href="#" class="cond-lk">Plantar Fasciitis</a><a href="#" class="cond-lk">Plantar Warts</a>
+              <a href="#" class="cond-lk">Achilles Tendonitis</a><a href="#" class="cond-lk">Toenail Fungus</a>
+              <a href="#" class="cond-lk">Neuromas</a><a href="#" class="cond-lk">Diabetic Ulcers</a>
+              <a href="#" class="cond-lk">Ankle Arthritis</a><a href="#" class="cond-lk">Neuropathy of the Foot</a>
+            </div>
+            <div class="pa-ft" style="border-top:1px solid rgba(62,92,168,.18);">
+              <a href="#" class="cond-ftl">View All Conditions &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <div class="pa-card" style="background:#E0E6E0;border-radius:20px 60px 40px 80px;">
+          <div class="pa-def">
+            <h3 class="pa-ttl" style="font-size:3.4rem;color:#2a3f68;">Services</h3>
+            <span class="pa-sub">We Provide</span>
+          </div>
+          <div class="pa-hov">
+            <h3 class="pa-ttl" style="font-size:1.9rem;color:#2a3f68;">Services</h3>
+            <span class="pa-sub">We Provide</span>
+            <hr class="pa-sep" style="background:rgba(127,159,97,.38);">
+            <div class="pa-cols">
+              <a href="#" class="svc-lk">Advanced Bunion Surgery</a><a href="#" class="svc-lk">Laser Treatments</a>
+              <a href="#" class="svc-lk">Lapiplasty</a><a href="#" class="svc-lk">KeryFlex Nail Restoration</a>
+              <a href="#" class="svc-lk">Minimally Invasive Bunion Surgery</a><a href="#" class="svc-lk">Onyfix Nail Correction</a>
+              <a href="#" class="svc-lk">Non-Surgical Bunion Treatment</a><a href="#" class="svc-lk">Sports Medicine</a>
+              <a href="#" class="svc-lk">Custom Orthotics</a><a href="#" class="svc-lk">Pediatric Foot Care</a>
+              <a href="#" class="svc-lk">Shockwave Therapy</a><a href="#" class="svc-lk">Diabetic Foot Care</a>
+            </div>
+            <div class="pa-ft" style="border-top:1px solid rgba(127,159,97,.3);">
+              <a href="#" class="svc-ftl">View All Services &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- === DOCTOR BIO PANEL === -->
+<section class="bio-section" aria-label="Meet Dr. Sarah Stewart">
+  <style>
+    .bio-section {
+      background-color: #F7F5F0;
+      font-family: 'Montserrat', sans-serif;
+      padding: 80px 24px 100px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .bio-container {
+      max-width: 1152px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .bio-image-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 540px;
+    }
+    .blob-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .arch-placeholder {
+      width: 403px;
+      height: 529px;
+      border-radius: 202px 202px 24px 24px;
+      background: linear-gradient(135deg, #CBD9D0 0%, #b0c4bb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .arch-placeholder-inner {
+      text-align: center;
+      color: #30363D;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .arch-placeholder-inner svg {
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .bio-content-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .bio-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 600;
+      color: #3E5CA8;
+      line-height: 1.1;
+      margin: 0 0 16px 0;
+    }
+    .bio-overline {
+      width: 36px;
+      height: 2px;
+      background: #7F9F61;
+      margin: 0 0 24px 0;
+      display: block;
+    }
+    .bio-body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #30363D;
+      margin: 0 0 18px 0;
+    }
+    .bio-body:last-of-type {
+      margin-bottom: 32px;
+    }
+    .bio-cta {
+      display: inline-block;
+      background-color: #3E5CA8;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      align-self: flex-start;
+      box-shadow: 0 2px 8px rgba(62,92,168,0.18);
+    }
+    .bio-cta:hover { background-color: #6D86BF; }
+    .wave-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 1;
+      height: 60px;
+    }
+    @media (max-width: 900px) {
+      .bio-section { padding: 56px 20px 80px; }
+      .bio-container { grid-template-columns: 1fr; gap: 40px; }
+      .bio-image-col { order: 1; min-height: 380px; }
+      .bio-content-col { order: 2; align-items: center; }
+      .bio-heading { font-size: 38px; text-align: center; }
+      .bio-overline { margin-left: auto; margin-right: auto; }
+      .bio-body { text-align: left; font-size: 13px; }
+      .arch-placeholder { width: 252px; height: 331px; border-radius: 126px 126px 20px 20px; }
+      .bio-cta { align-self: center; }
+    }
+  </style>
+
+  <svg class="wave-svg" viewBox="0 0 1400 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M-20 42 C 100 18, 220 52, 380 32 C 520 14, 630 50, 800 30 C 960 10, 1080 46, 1260 28 C 1340 18, 1400 34, 1440 24" stroke="#EBEDF5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <div class="bio-container">
+    <div class="bio-image-col">
+      <svg class="blob-layer" viewBox="-60 0 580 620" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 20 510 C -30 475, -70 400, -50 315 C -30 235, 45 185, 135 195 C 218 204, 290 260, 318 345 C 348 435, 318 525, 242 558 C 170 588, 75 545, 20 510 Z" fill="#CBD9D0" opacity="0.60"/>
+        <path d="M 330 110 C 300 60, 330 5, 378 2 C 426 -2, 470 35, 468 82 C 466 126, 430 158, 390 150 C 355 143, 342 138, 330 110 Z" fill="#E0E6E0" opacity="0.55"/>
+      </svg>
+      <div class="arch-placeholder">
+        <div class="arch-placeholder-inner">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="14" r="7" stroke="#30363D" stroke-width="2"/>
+            <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#30363D" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Dr. Photo
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-content-col">
+      <h2 class="bio-heading">Meet Dr. Sarah Stewart</h2>
+      <span class="bio-overline" aria-hidden="true"></span>
+      <p class="bio-body">Long before she was a podiatrist, Dr. Sarah Stewart was the one stretching at the barre. Years of competitive ballet, tap, jazz, and lyrical dance has taught her how much your feet really do for you—and how much it hurts when they stop cooperating.</p>
+      <p class="bio-body">Dancing also taught her about doctors. She saw what it felt like to be rushed through an appointment, told to wait for the pain to go away and reduce activities for weeks without an end point, or pushed toward a treatment that didn't fix what was actually wrong.</p>
+      <p class="bio-body">When she opened Grandville Foot and Ankle, she set out to do it differently. It's the kind of care you'd hope to find at a big-city specialty clinic and rarely do. Conversations in plain language instead of medical jargon. Honest answers about which options make sense for your goals—and which probably don't. And a foot doctor who remembers the details about your life from one visit to the next.</p>
+      <a href="#" class="bio-cta">Ready to be heard? Request your appointment today.</a>
+    </div>
+  </div>
+
+</section>
+<!-- === END DOCTOR BIO PANEL === -->
+  <!-- === HOW IT WORKS PANEL === -->
+<style>
+  .hw-section {
+    background: #EBEDF5;
+    font-family: 'Montserrat', sans-serif;
+    padding: 64px 48px;
+    box-sizing: border-box;
+  }
+  .hw-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hw-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(42px, 6vw, 64px);
+    color: #3E5CA8;
+    line-height: 1.05;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+  }
+  .hw-rule {
+    width: 40px;
+    height: 2px;
+    background: #7F9F61;
+    border: none;
+    margin: 0 auto 40px auto;
+  }
+  .hw-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+  }
+  @media (min-width: 480px) {
+    .hw-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  .hw-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px 26px 0 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(62,92,168,0.06);
+    overflow: hidden;
+  }
+  .hw-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 68px;
+    color: #3E5CA8;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .hw-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 22px;
+    color: #3E5CA8;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+  }
+  .hw-card-rule {
+    width: 28px;
+    height: 1.5px;
+    background: #CBD9D0;
+    border: none;
+    margin: 0 auto 13px auto;
+  }
+  .hw-card-body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #30363D;
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+  }
+  .hw-card-photo {
+    height: 140px;
+    background: linear-gradient(135deg, #CBD9D0 0%, #b5c8be 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: auto -26px 0 -26px;
+    width: calc(100% + 52px);
+    flex-shrink: 0;
+  }
+  .hw-card-photo svg {
+    width: 32px;
+    height: 32px;
+    stroke: #7F9F61;
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.65;
+  }
+  .hw-card-photo-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: #4a6357;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+  }
+  .hw-cta-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .hw-cta-btn {
+    background: #3E5CA8;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 11px 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(62,92,168,0.18);
+    transition: background 0.18s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .hw-cta-btn:hover {
+    background: #6D86BF;
+  }
+</style>
+
+<section class="hw-section" aria-label="How It Works — three steps to better foot health">
+  <div class="hw-inner">
+    <h2 class="hw-heading">How It Works</h2>
+    <hr class="hw-rule" aria-hidden="true">
+
+    <div class="hw-cards">
+
+      <!-- Step 1 -->
+      <div class="hw-card">
+        <div class="hw-step-num" aria-label="Step 1">1</div>
+        <h3 class="hw-card-title">Book Your Visit</h3>
+        <hr class="hw-card-rule" aria-hidden="true">
+        <p class="hw-card-body">Request an appointment online or call our Grandville office&mdash;same-day slots are often available for urgent issues.</p>
+        <div class="hw-card-photo" role="img" aria-label="Photo placeholder">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="hw-card-photo-label">Photo placeholder</span>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="hw-card">
+        <div class="hw-step-num" aria-label="Step 2">2</div>
+        <h3 class="hw-card-title">Get a Real Plan</h3>
+        <hr class="hw-card-rule" aria-hidden="true">
+        <p class="hw-card-body">Sit down with Dr. Stewart for a thorough evaluation and a clear, honest treatment roadmap that fits your timeline and budget.</p>
+        <div class="hw-card-photo" role="img" aria-label="Photo placeholder">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="hw-card-photo-label">Photo placeholder</span>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="hw-card">
+        <div class="hw-step-num" aria-label="Step 3">3</div>
+        <h3 class="hw-card-title">Get Back to Living</h3>
+        <hr class="hw-card-rule" aria-hidden="true">
+        <p class="hw-card-body">Return to the people and activities you love with healthier, pain-free feet.</p>
+        <div class="hw-card-photo" role="img" aria-label="Photo placeholder">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="hw-card-photo-label">Photo placeholder</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hw-cta-row">
+      <a href="#" class="hw-cta-btn">Book Your Appointment Today</a>
+    </div>
+  </div>
+</section>
+  <!-- === GOOGLE REVIEWS PANEL === -->
+<section style="background-color: #F7F5F0;" class="py-16 sm:py-20 px-6 text-center">
+  <h2 class="font-serif italic font-semibold text-primary-blue text-5xl sm:text-6xl leading-none mb-6">
+    What Our Patients Are Saying
+  </h2>
+  <div class="w-12 h-0.5 bg-accent-green mx-auto mb-12"></div>
+
+  <!-- Elfsight Google Reviews | Gra
+
+<!-- ============================== RESOURCES PANEL ============================== -->
+<section class="bg-soft-linen py-16 lg:py-24">
+<div class="max-w-6xl mx-auto px-9 sm:px-11 lg:px-8">
+<header class="text-center max-w-xl mx-auto mb-12">
+<h2 class="font-serif italic text-[3rem] text-primary-blue">Resources</h2>
+<div class="w-10 h-[3px] bg-[#8A9B6E] mx-auto mt-4"></div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+<article class="resources-card bg-white rounded-[20px] p-10 flex flex-col"><h3 class="font-serif italic text-primary-blue text-[2.2rem] mb-6">Blog</h3><ul class="flex-1"><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">The Daily Foot Care Routine Every Diabetes Patient Needs</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Essential Strategies for Managing Chronic Foot Wounds</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">How Diabetic Neuropathy Affects Your Feet and What You Can Do About It</li></ul><a href="#" class="mt-8 uppercase tracking-[.1em] text-[.72rem] font-bold text-primary-blue">View All Articles →</a></article><article class="resources-card bg-white rounded-[20px] p-10 flex flex-col"><h3 class="font-serif italic text-primary-blue text-[2.2rem] mb-6">FAQ</h3><ul class="flex-1"><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Why do I have burning pain in my feet at night?</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">How can I tell if I have neuropathy in my feet?</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Are custom orthotics the right solution for my foot pain?</li></ul><a href="#" class="mt-8 uppercase tracking-[.1em] text-[.72rem] font-bold text-primary-blue">View All FAQs →</a></article><article class="resources-card bg-white rounded-[20px] p-10 flex flex-col"><h3 class="font-serif italic text-primary-blue text-[2.2rem] mb-6">Library</h3><ul class="flex-1"><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Protecting Your Feet From Diabetic Complications Starts Now</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Why the Right Shoes Make or Break Plantar Fasciitis Recovery</li><li class="border-t border-stone-200 py-4 text-[0.95rem] font-semibold text-slate-700">Understanding What Causes Plantar Warts and How We Treat Them</li></ul><a href="#" class="mt-8 uppercase tracking-[.1em] text-[.72rem] font-bold text-primary-blue">Browse Library →</a></article></div></div></section>
+ndville Foot and Ankle -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-28dcb8de-c7f5-4feb-9244-d9e5b217328d" data-elfsight-app-lazy></div>
+</section>
+<!-- === END GOOGLE REVIEWS PANEL === -->
+  
+  <!-- ============================== FIRM INTRO PANEL ============================== -->
+  <section class="py-16 sm:py-20 md:py-24 bg-soft-linen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-center">
+
+        <!-- Content -->
+        <div>
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-0.5 bg-accent-green flex-shrink-0"></div>
+            <span class="font-sans text-[0.7rem] font-bold tracking-[0.14em] uppercase text-accent-green">Grandville Foot &amp; Ankle</span>
+          </div>
+
+          <h2 class="font-serif italic font-semibold text-primary-blue text-5xl sm:text-6xl lg:text-7xl leading-none mb-6">
+            Foot Care Designed Around Your Real Life
+          </h2>
+
+          <div class="w-12 h-0.5 bg-accent-green mb-7"></div>
+
+          <div class="font-sans text-[0.92rem] leading-[1.85] text-deep-slate space-y-4">
+            <p>You lace up for your morning run, and that sharp pain in your heel shows up again. Your daughter sits out of dance class because an ingrown toenail won't quit. Or maybe you've been told for years that your bunion is just something you'll have to live with—unless you want to spend months in a surgical boot or not walking.</p>
+            <p>At Grandville Foot and Ankle, none of that has to be your reality.</p>
+            <p>Dr. Sarah Stewart built her podiatry practice for people who want more than a rushed appointment and a one-size-fits-all answer. Parents drive from 40 minutes out because no one near them treats kids' feet. Runners chasing one more good season come here for second opinions when other doctors tell them surgery or quitting their sport is their only option. Patients who were told their bunions couldn't be fixed walk out of surgery on the same day and back into their lives.</p>
+            <p>You'll find tools and treatments at Grandville Foot and Ankle that most podiatry offices in West Michigan simply don't offer. Minimally invasive bunion correction without hardware and same day walking. Class IV laser therapy and extracorporeal shockwave therapy for stubborn heel pain. Regenerative medicine and liposana. SWIFT microwave therapy and four other treatment options for warts for both kids and adults. Custom functional orthotics for dress shoes, running shoes, and everyday shoes. Painless ingrown toenail correction with Onyfix. Cosmetic laser and KeryFlex treatments for fungal nail changes. Same-day appointments for urgent needs. In-office X-ray and ultrasound, with results at your appointments.</p>
+            <p>What truly sets this practice apart isn't only the technology, however. It's the feeling of walking into an office where someone actually listens, asks the right questions, and treats you like the person you are—not a chart number.</p>
+          </div>
+        </div>
+
+        <!-- Lifestyle image — mobile stacks above content -->
+        <div class="flex justify-center order-first lg:order-last">
+          <div class="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
+            <!-- Organic blob behind arch -->
+            <svg class="absolute -top-5 -left-5 w-[calc(100%+40px)] h-[calc(100%+40px)] z-0" viewBox="0 0 416 556" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M60 80 C10 80, -10 160, 20 260 C50 360, 0 430, 60 490 C120 550, 260 570, 340 510 C420 450, 440 340, 410 230 C380 120, 340 20, 240 20 C160 20, 110 80, 60 80 Z" fill="#CBD9D0" opacity="0.45"/>
+            </svg>
+            <!-- Arch image placeholder -->
+            <div class="relative z-10 w-full aspect-[3/4] overflow-hidden" style="border-radius: 180px 180px 24px 24px; background-color: #E0E6E0;">
+              <img
+                src="[FIRM_INTRO_LIFESTYLE_PHOTO]"
+                alt="A patient family at Grandville Foot and Ankle"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ============================== END FIRM INTRO PANEL ============================== -->
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-deep-slate text-soft-linen">
+  <div class="border-t-2 border-accent-green/60"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <!-- Brand + social -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="none" stroke="#6D86BF" stroke-width="1.5" />
+          <path d="M32 8c11 4 18 12 18 22 0 9-7 17-18 26-11-9-18-17-18-26 0-10 7-18 18-22Z" fill="#6D86BF" />
+          <path d="M32 14c8 5 12 11 12 18 0 4-2 8-6 12-2-9-5-16-10-22 1-3 2-5 4-8Z" fill="#7F9F61" />
+        </svg>
+        <span class="font-serif text-lg font-semibold text-white">Grandville Foot &amp; Ankle</span>
+      </div>
+      <p class="text-sm text-soft-linen/70 leading-relaxed mb-5">
+        Elevated Care. Active Life. Concierge-level podiatry for families, athletes, and dancers throughout West Michigan.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-soft-linen/30 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.7V11H8v3h2v7h3v-7h2.2l.3-3H13v-1.1c0-.6.4-.9.9-.9Z" /></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-soft-linen/30 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4" /><circle cx="12" cy="12" r="3.4" /><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none" /></svg>
+        </a>
+        <a href="#" aria-label="Google My Business" class="w-9 h-9 rounded-full border border-soft-linen/30 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9" /><path d="M12 8v4l2.5 2.5" stroke-linecap="round" /></svg>
+        </a>
+        <a href="#" aria-label="RSS Feed" class="w-9 h-9 rounded-full border border-soft-linen/30 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="1.4" fill="currentColor" stroke="none" /><path d="M5 11a8 8 0 0 1 8 8M5 6a13 13 0 0 1 13 13" stroke-linecap="round" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Office info -->
+    <div>
+      <h2 class="font-serif text-lg text-white mb-4">Visit Our Office</h2>
+      <address class="text-sm text-soft-linen/75 not-italic leading-relaxed space-y-2">
+        <p>3550 Fairlanes Ave SW, Ste 1<br />Grandville, MI 49418</p>
+        <p>Phone: <a href="tel:6165343920" class="hover:text-accent-green transition-colors">616-534-3920</a></p>
+        <p>Fax: 616-534-0801</p>
+        <p>Hours: Mon&ndash;Thurs, 8am&ndash;5pm</p>
+      </address>
+    </div>
+
+    <!-- Quick links -->
+    <div>
+      <h2 class="font-serif text-lg text-white mb-4">Explore</h2>
+      <ul class="text-sm text-soft-linen/75 space-y-2">
+        <li><a href="#" class="hover:text-accent-green transition-colors">Conditions</a></li>
+        <li><a href="#" class="hover:text-accent-green transition-colors">Services</a></li>
+        <li><a href="#" class="hover:text-accent-green transition-colors">Patient Resources</a></li>
+        <li><a href="#" class="hover:text-accent-green transition-colors">About</a></li>
+        <li><a href="#" class="hover:text-accent-green transition-colors">New Patients</a></li>
+        <li><a href="#" class="hover:text-accent-green transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Search -->
+    <div>
+      <h2 class="font-serif text-lg text-white mb-4">Search the Site</h2>
+      <form class="flex items-center" role="search" onsubmit="return false;">
+        <label for="site-search" class="sr-only">Search</label>
+        <input
+          id="site-search"
+          type="search"
+          placeholder="Search&hellip;"
+          class="w-full rounded-l-md bg-white/10 border border-soft-linen/30 text-sm text-white placeholder-soft-linen/50 px-3 py-2.5 focus:outline-none focus:border-accent-green"
+        />
+        <button type="submit" class="rounded-r-md bg-primary-blue hover:bg-secondary-blue px-3.5 py-2.5 transition-colors" aria-label="Submit search">
+          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.3-4.3" stroke-linecap="round" /></svg>
+        </button>
+      </form>
+      <a href="#" class="inline-flex items-center gap-1 mt-5 text-sm font-semibold text-accent-green hover:text-white transition-colors">
+        Book Your Appointment Today &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- Global footer -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-soft-linen/60">
+      <p>&copy;2026 Grandville Foot and Ankle, All Rights Reserved. Reproduced with Permission.</p>
+      <p class="flex flex-wrap items-center gap-x-2">
+        <a href="#" class="hover:text-accent-green transition-colors">Privacy Policy</a>
+        <span aria-hidden="true">&middot;</span>
+        <span>Website Built by Foster Consulting, Inc.</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Powered By Dynamic Self-Syndication (DSS&trade;)</span>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#" class="hover:text-accent-green transition-colors">Site Map</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#" class="hover:text-accent-green transition-colors">DSS Login</a>
+      </p>
+    </div>
+  </div>
+
+<!-- ==========================================================
+GOOGLE MAP PANEL
+========================================================== -->
+<section class="w-full bg-white">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2922.6932272248973!2d-85.77758318781798!3d42.900418771027496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819ba7d1df8db83%3A0x642329c8712bec98!2sGrandville%20Foot%20and%20Ankle!5e0!3m2!1sen!2sus!4v1782759943039!5m2!1sen!2sus" style="border:0;width:100%;height:560px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Grandville Foot and Ankle Map"></iframe>
+</section>
+</footer>
+
+<script>
+  // Scroll-aware header background: transparent over the hero, solid once scrolled
+  const siteHeader = document.querySelector("header");
+  const SCROLL_THRESHOLD = 40;
+  const scrolledClasses = ["shadow-sm"];
+
+  function updateHeaderBackground() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      siteHeader.classList.add(...scrolledClasses);
+    } else {
+      siteHeader.classList.remove(...scrolledClasses);
+    }
+  }
+
+  window.addEventListener("scroll", updateHeaderBackground, { passive: true });
+  updateHeaderBackground();
+
+  // Mobile menu toggle
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    mobileMenu.classList.toggle("hidden");
+    iconOpen.classList.toggle("hidden");
+    iconClose.classList.toggle("hidden");
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  });
+
+  // Full-width mega menus (Conditions / Services)
+  const dropdownTriggers = document.querySelectorAll("[data-dropdown-trigger]");
+  const dropdownPanels = document.querySelectorAll("[data-dropdown-panel]");
+
+  const closedClasses = ["invisible", "opacity-0", "-translate-y-3", "pointer-events-none"];
+  const openClasses = ["visible", "opacity-100", "translate-y-0", "pointer-events-auto"];
+
+  function positionMegaMenus() {
+    const headerBottom = Math.round(siteHeader.getBoundingClientRect().bottom);
+    dropdownPanels.forEach((panel) => {
+      panel.style.top = headerBottom + "px";
+    });
+  }
+
+  function closeAllMegaMenus() {
+    dropdownPanels.forEach((p) => {
+      p.classList.add(...closedClasses);
+      p.classList.remove(...openClasses);
+    });
+    dropdownTriggers.forEach((t) => t.setAttribute("aria-expanded", "false"));
+  }
+
+  function openMegaMenu(panel, trigger) {
+    positionMegaMenus();
+    panel.classList.remove(...closedClasses);
+    panel.classList.add(...openClasses);
+    trigger.setAttribute("aria-expanded", "true");
+  }
+
+  dropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const panel = document.getElementById(trigger.getAttribute("data-target"));
+      const isOpen = panel.classList.contains("visible");
+
+      closeAllMegaMenus();
+
+      if (!isOpen) {
+        openMegaMenu(panel, trigger);
+      }
+    });
+  });
+
+  dropdownPanels.forEach((panel) => {
+    panel.addEventListener("click", (e) => e.stopPropagation());
+  });
+
+  document.addEventListener("click", closeAllMegaMenus);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAllMegaMenus();
+  });
+  window.addEventListener("resize", positionMegaMenus);
+  window.addEventListener("scroll", positionMegaMenus, { passive: true });
+
+  // Initialize closed state and position on load
+  closeAllMegaMenus();
+  positionMegaMenus();
+
+  // Mobile accordion (Conditions / Services within mobile menu)
+  const accordionTriggers = document.querySelectorAll("[data-mobile-accordion-trigger]");
+  accordionTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-target");
+      const panel = document.getElementById(targetId);
+      const isOpen = !panel.classList.contains("hidden");
+      panel.classList.toggle("hidden");
+      trigger.setAttribute("aria-expanded", String(!isOpen));
+      const chevron = trigger.querySelector("[data-chevron]");
+      if (chevron) chevron.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+    });
+  });
+</script>
+</body>
+</html>
